@@ -1,0 +1,38 @@
+services:
+  robot-framework:
+    image: python:3.12-slim
+    container_name: robot-framework
+    environment:
+      - DISPLAY=:99
+    volumes:
+      - ./demoapp:/app/demoapp
+      - ./input_tests:/app/input_tests
+      - ./ChromeForTesting:/app/ChromeForTesting
+    working_dir: /app
+    command: >
+      sh -c "
+      apt-get update &&
+      apt-get install -y xvfb &&
+      pip install robotframework robotframework-seleniumlibrary &&
+      Xvfb :99 -screen 0 1920x1080x24 & 
+      python3 demoapp/server.py & 
+      sleep 5 && 
+      robot input_tests/completed_input.robot
+      "
+    ports:
+      - "7272:7272"
+
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins
+    user: root
+    ports:
+      - "8090:8080"
+      - "50000:50000"
+    volumes:
+      - jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock  # Mount Docker socket
+      - /usr/bin/docker:/usr/bin/docker           # Mount Docker binary (optional but recommended)
+
+volumes:
+  jenkins_home:
