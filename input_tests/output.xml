@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2 (Python 3.13.1 on win32)" generated="2025-01-28T15:47:19.722920" rpa="false" schemaversion="5">
+<suite id="s1" name="Completed Input" source="c:\Users\watth\OneDrive\Desktop\Robot_Test\input_tests\completed_input.robot">
+<test id="s1-t1" name="Open Form:" line="10">
+<kw name="Open Browser To Form Page" owner="resource">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-28T15:47:19.921668" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001E21E311940&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-28T15:47:19.921423" elapsed="0.000277"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-01-28T15:47:19.921945" level="INFO">${chrome_options.binary_location} = c:\Users\watth\OneDrive\Desktop\Robot_Test\input_tests\..\ChromeForTesting\chrome\chrome.exe</msg>
+<var>${chrome_options.binary_location}</var>
+<arg>${CHROME_BROWSER_PATH}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-01-28T15:47:19.921813" elapsed="0.000154"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-01-28T15:47:19.922719" level="INFO">${service} = &lt;selenium.webdriver.chrome.service.Service object at 0x000001E21E311BE0&gt;</msg>
+<var>${service}</var>
+<arg>sys.modules["selenium.webdriver.chrome.service"].Service(executable_path=r"${CHROME_DRIVER_PATH}")</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-01-28T15:47:19.922043" elapsed="0.000705"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:47:19.923010" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<arg>service=${service}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-01-28T15:47:19.922848" elapsed="2.258409"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:47:22.181586" level="INFO">Opening url 'http://localhost:7272/Form.html'</msg>
+<arg>${FORM_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-01-28T15:47:22.181436" elapsed="58.870061"/>
+</kw>
+<doc>Launch Chrome browser using specified paths and navigate to the URL.</doc>
+<status status="PASS" start="2025-01-28T15:47:19.920929" elapsed="61.130700"/>
+</kw>
+<status status="PASS" start="2025-01-28T15:47:19.920351" elapsed="61.131635"/>
+</test>
+<test id="s1-t2" name="Record Success:" line="13">
+<kw name="Input First Name" owner="resource">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-28T15:48:21.054270" level="INFO">Typing text 'Somsong' into text field 'firstname'.</msg>
+<msg time="2025-01-28T15:48:21.056728" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.264)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6135980D5+2992373]
+	(No symbol) [0x00007FF61322BFD0]
+	(No symbol) [0x00007FF6130C590A]
+	(No symbol) [0x00007FF61309F4F5]
+	(No symbol) [0x00007FF6131463A7]
+	(No symbol) [0x00007FF61315EE72]
+	(No symbol) [0x00007FF61313F113]
+	(No symbol) [0x00007FF61310A918]
+	(No symbol) [0x00007FF61310BA81]
+	GetHandleVerifier [0x00007FF6135F6A2D+3379789]
+	GetHandleVerifier [0x00007FF61360C32D+3468109]
+	GetHandleVerifier [0x00007FF613600043+3418211]
+	GetHandleVerifier [0x00007FF61338C78B+847787]
+	(No symbol) [0x00007FF61323757F]
+	(No symbol) [0x00007FF613232FC4]
+	(No symbol) [0x00007FF61323315D]
+	(No symbol) [0x00007FF613222979]
+	BaseThreadInitThunk [0x00007FFE142B259D+29]
+	RtlUserThreadStart [0x00007FFE155EAF38+40]
+</msg>
+<msg time="2025-01-28T15:48:21.058970" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.264)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6135980D5+2992373]
+	(No symbol) [0x00007FF61322BFD0]
+	(No symbol) [0x00007FF6130C590A]
+	(No symbol) [0x00007FF61309F4F5]
+	(No symbol) [0x00007FF6131463A7]
+	(No symbol) [0x00007FF61315EE72]
+	(No symbol) [0x00007FF61313F113]
+	(No symbol) [0x00007FF61310A918]
+	(No symbol) [0x00007FF61310BA81]
+	GetHandleVerifier [0x00007FF6135F6A2D+3379789]
+	GetHandleVerifier [0x00007FF61360C32D+3468109]
+	GetHandleVerifier [0x00007FF613600043+3418211]
+	GetHandleVerifier [0x00007FF61338C78B+847787]
+	(No symbol) [0x00007FF61323757F]
+	(No symbol) [0x00007FF613232FC4]
+	(No symbol) [0x00007FF61323315D]
+	(No symbol) [0x00007FF613222979]
+	BaseThreadInitThunk [0x00007FFE142B259D+29]
+	RtlUserThreadStart [0x00007FFE155EAF38+40]
+</msg>
+<arg>firstname</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="FAIL" start="2025-01-28T15:48:21.053867" elapsed="0.010262">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.264)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6135980D5+2992373]
+	(No symbol) [0x00007FF61322BFD0]
+	(No symbol) [0x00007FF6130C590A]
+	(No symbol) [0x00007FF61309F4F5]
+	(No symbol) [0x00007FF6131463A7]
+	(No symbol) [0x00007FF61315EE72]
+	(No symbol) [0x00007FF61313F113]
+	(No symbol) [0x00007FF61310A918]
+	(No symbol) [0x00007FF61310BA81]
+	GetHandleVerifier [0x00007FF6135F6A2D+3379789]
+	GetHandleVerifier [0x00007FF61360C32D+3468109]
+	GetHandleVerifier [0x00007FF613600043+3418211]
+	GetHandleVerifier [0x00007FF61338C78B+847787]
+	(No symbol) [0x00007FF61323757F]
+	(No symbol) [0x00007FF613232FC4]
+	(No symbol) [0x00007FF61323315D]
+	(No symbol) [0x00007FF613222979]
+	BaseThreadInitThunk [0x00007FFE142B259D+29]
+	RtlUserThreadStart [0x00007FFE155EAF38+40]
+</status>
+</kw>
+<arg>Somsong</arg>
+<status status="FAIL" start="2025-01-28T15:48:21.053523" elapsed="0.010911">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.264)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6135980D5+2992373]
+	(No symbol) [0x00007FF61322BFD0]
+	(No symbol) [0x00007FF6130C590A]
+	(No symbol) [0x00007FF61309F4F5]
+	(No symbol) [0x00007FF6131463A7]
+	(No symbol) [0x00007FF61315EE72]
+	(No symbol) [0x00007FF61313F113]
+	(No symbol) [0x00007FF61310A918]
+	(No symbol) [0x00007FF61310BA81]
+	GetHandleVerifier [0x00007FF6135F6A2D+3379789]
+	GetHandleVerifier [0x00007FF61360C32D+3468109]
+	GetHandleVerifier [0x00007FF613600043+3418211]
+	GetHandleVerifier [0x00007FF61338C78B+847787]
+	(No symbol) [0x00007FF61323757F]
+	(No symbol) [0x00007FF613232FC4]
+	(No symbol) [0x00007FF61323315D]
+	(No symbol) [0x00007FF613222979]
+	BaseThreadInitThunk [0x00007FFE142B259D+29]
+	RtlUserThreadStart [0x00007FFE155EAF38+40]
+</status>
+</kw>
+<kw name="Input Last Name" owner="resource">
+<arg>Sandee</arg>
+<status status="NOT RUN" start="2025-01-28T15:48:21.064936" elapsed="0.000089"/>
+</kw>
+<kw name="Input Destination" owner="resource">
+<arg>Europe</arg>
+<status status="NOT RUN" start="2025-01-28T15:48:21.065389" elapsed="0.000051"/>
+</kw>
+<kw name="Input Contact Person" owner="resource">
+<arg>Sodsai Sandee</arg>
+<status status="NOT RUN" start="2025-01-28T15:48:21.065751" elapsed="0.000053"/>
+</kw>
+<kw name="Input Relationship" owner="resource">
+<arg>Mother</arg>
+<status status="NOT RUN" start="2025-01-28T15:48:21.066026" elapsed="0.000031"/>
+</kw>
+<kw name="Input Email" owner="resource">
+<arg>somsong@kkumail.com</arg>
+<status status="NOT RUN" start="2025-01-28T15:48:21.066250" elapsed="0.000035"/>
+</kw>
+<kw name="Input Phone Number" owner="resource">
+<arg>081-111-1234</arg>
+<status status="NOT RUN" start="2025-01-28T15:48:21.066485" elapsed="0.000040"/>
+</kw>
+<kw name="Submit Form" owner="resource">
+<doc>Submit the form after filling out all fields.</doc>
+<status status="NOT RUN" start="2025-01-28T15:48:21.066891" elapsed="0.000041"/>
+</kw>
+<kw name="Record Success Page Should Be Open" owner="resource">
+<doc>Verifies the success page after the form is submitted.</doc>
+<status status="NOT RUN" start="2025-01-28T15:48:21.067138" elapsed="0.000031"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-28T15:48:21.067659" elapsed="2.076015"/>
+</kw>
+<status status="FAIL" start="2025-01-28T15:48:21.052917" elapsed="2.091013">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.264)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6135980D5+2992373]
+	(No symbol) [0x00007FF61322BFD0]
+	(No symbol) [0x00007FF6130C590A]
+	(No symbol) [0x00007FF61309F4F5]
+	(No symbol) [0x00007FF6131463A7]
+	(No symbol) [0x00007FF61315EE72]
+	(No symbol) [0x00007FF61313F113]
+	(No symbol) [0x00007FF61310A918]
+	(No symbol) [0x00007FF61310BA81]
+	GetHandleVerifier [0x00007FF6135F6A2D+3379789]
+	GetHandleVerifier [0x00007FF61360C32D+3468109]
+	GetHandleVerifier [0x00007FF613600043+3418211]
+	GetHandleVerifier [0x00007FF61338C78B+847787]
+	(No symbol) [0x00007FF61323757F]
+	(No symbol) [0x00007FF613232FC4]
+	(No symbol) [0x00007FF61323315D]
+	(No symbol) [0x00007FF613222979]
+	BaseThreadInitThunk [0x00007FFE142B259D+29]
+	RtlUserThreadStart [0x00007FFE155EAF38+40]
+</status>
+</test>
+<status status="FAIL" start="2025-01-28T15:47:19.724220" elapsed="63.421995"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Completed Input" id="s1" pass="1" fail="1" skip="0">Completed Input</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-01-28T15:48:21.056728" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.264)
+Stacktrace:
+	GetHandleVerifier [0x00007FF6135980D5+2992373]
+	(No symbol) [0x00007FF61322BFD0]
+	(No symbol) [0x00007FF6130C590A]
+	(No symbol) [0x00007FF61309F4F5]
+	(No symbol) [0x00007FF6131463A7]
+	(No symbol) [0x00007FF61315EE72]
+	(No symbol) [0x00007FF61313F113]
+	(No symbol) [0x00007FF61310A918]
+	(No symbol) [0x00007FF61310BA81]
+	GetHandleVerifier [0x00007FF6135F6A2D+3379789]
+	GetHandleVerifier [0x00007FF61360C32D+3468109]
+	GetHandleVerifier [0x00007FF613600043+3418211]
+	GetHandleVerifier [0x00007FF61338C78B+847787]
+	(No symbol) [0x00007FF61323757F]
+	(No symbol) [0x00007FF613232FC4]
+	(No symbol) [0x00007FF61323315D]
+	(No symbol) [0x00007FF613222979]
+	BaseThreadInitThunk [0x00007FFE142B259D+29]
+	RtlUserThreadStart [0x00007FFE155EAF38+40]
+</msg>
+</errors>
+</robot>
